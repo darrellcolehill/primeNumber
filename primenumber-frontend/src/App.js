@@ -9,6 +9,7 @@ function App() {
 
 
   function isPrimeNumber(input) {
+    
     if(isNaN(input) || input.length === 0)
     {
       console.log(input + " is NaN")
@@ -30,9 +31,11 @@ function App() {
           setResult("NOT PRIME");
           return;
         }
-        setResult("PRIME");
+        
       }
     }
+
+    setResult("PRIME");
 
   }
 
@@ -63,9 +66,7 @@ function App() {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <label>
-          <input className='numberInput' type="text" placeholder={number} onChange={handleChange} />
-        </label>
+        <input className='numberInput' type="text" placeholder={number} onChange={handleChange} />     
         <br></br>
         <input className='check-btn' type="submit" value="Check" />
       </form>
