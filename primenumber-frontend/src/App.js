@@ -16,18 +16,24 @@ function App() {
       setValid(false);
       return;
     }
-
-    // return 0 here if the number is not prime
-    for(let i = 2; i < parseInt(input); i++)
+    else if(parseInt(input) <= 0)
     {
-      if(parseInt(input) % i === 0)
+      setResult("NOT PRIME");
+      return;
+    }
+    else
+    {
+      for(let i = 2; i < parseInt(input); i++)
       {
-        setResult("NOT PRIME");
-        return;
+        if(parseInt(input) % i === 0)
+        {
+          setResult("NOT PRIME");
+          return;
+        }
+        setResult("PRIME");
       }
     }
 
-    setResult("PRIME");
   }
 
   function handleSubmit(e) {
